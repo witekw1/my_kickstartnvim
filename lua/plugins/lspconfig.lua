@@ -121,7 +121,16 @@ return {
     --  See `:help lsp-config` for information about keys and how to configure
     local servers = {
       ruff = {},
-      -- clangd = {},
+      basedpyright = {
+        settings = {
+          basedpyright = {
+            analysis = {
+              typeCheckingMode = 'off',
+            },
+          },
+        },
+      },
+      -- clangd = {},:
       -- gopls = {},
       -- pyright = {},
       -- rust_analyzer = {},

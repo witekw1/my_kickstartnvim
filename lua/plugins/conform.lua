@@ -16,14 +16,14 @@ return { -- Autoformat
       -- Disable "format_on_save lsp_fallback" for languages that don't
       -- have a well standardized coding style. You can add additional
       -- languages here or re-enable it for the disabled ones.
-      local disable_filetypes = { c = true, cpp = true }
-      if disable_filetypes[vim.bo[bufnr].filetype] then
-        return nil
-      else
+      local enable_filetypes = { lua = true }
+      if enable_filetypes[vim.bo[bufnr].filetype] then
         return {
           timeout_ms = 500,
           lsp_format = 'fallback',
         }
+      else
+        return nil
       end
     end,
     formatters_by_ft = {
