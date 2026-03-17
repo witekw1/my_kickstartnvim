@@ -15,7 +15,7 @@ return {
           'rustc $fileName &&',
           '$dir/$fileNameWithoutExt',
         },
-        c = 'cd $dir && gcc $fileName -o /tmp/$fileNameWithoutExt && /tmp/$fileNameWithoutExt',
+        c = 'cd "$dir" && gcc $fileName -o /tmp/$fileNameWithoutExt && /tmp/$fileNameWithoutExt',
       },
       vim.keymap.set('n', '<leader>rr', ':w<CR> <BAR> :RunCode<CR>', { noremap = true, silent = false }),
       vim.keymap.set('n', '<leader>rf', ':w<CR> <BAR> :RunFile<CR>', { noremap = true, silent = false }),
